@@ -12,6 +12,10 @@ function addBookToLibrary(title, author, pages, read) {
   myLibrary.push(newbook)
 }
 
+addBookToLibrary("Howdy", "Duke Wellington", 15, false)
+
+console.log(myLibrary)
+
 // step 3
 // make function...
 // loop through library array
