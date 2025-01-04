@@ -7,10 +7,9 @@ function Book(title, author, pages, read) {
   this.read = read
 }
 
-function addBookToLibrary() {
-  // step 2
-  // create book from arguments
-  // adds book to myLibrary array
+function addBookToLibrary(title, author, pages, read) {
+  let newbook = new Book(title, author, pages, read)
+  myLibrary.push(newbook)
 }
 
 // step 3
