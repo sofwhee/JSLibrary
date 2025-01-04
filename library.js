@@ -12,9 +12,16 @@ function addBookToLibrary(title, author, pages, read) {
   myLibrary.push(newbook)
 }
 
+function displayAllBooks() {
+  myLibrary.forEach((book) => {
+    
+  });
+}
+
 addBookToLibrary("Howdy", "Duke Wellington", 15, false)
 
 console.log(myLibrary)
+
 
 // step 3
 // make function...
