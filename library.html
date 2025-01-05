@@ -21,6 +21,26 @@
 
   <dialog id="dialogAddBook">
     <p>Fill in your book details!</p>
+    <form action="/form-handler" method="post">
+      <p>
+        <label for="title">Title</label>
+        <input type="text" id="title" name="title">
+      </p>
+      <p>
+        <label for="author">Author</label>
+        <input type="text" id="author" name="author">
+      </p>
+      <p>
+        <label for="pages">Pages</label>
+        <input type="number" id="pages" name="pages">
+      </p>
+        <label for="read">Read</label>
+        <input type="radio" id="read" name="read">
+
+      <p class="button">
+        <button>Add</button>
+      </p>
+    </form>
     <button id="dialogSubmit">Submit</button>
     <button id="dialogCloser">Close</button>
   </dialog>
