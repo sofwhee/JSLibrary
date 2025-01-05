@@ -19,10 +19,15 @@ function displayAllBooks() {
     let bookList = document.createElement("ol")
 
     for (const [key, value] of Object.entries(book)) {
-      let bookEntry = document.createElement("li")
-      bookEntry.textContent = value
-      console.log(bookEntry.textContent)
-      bookList.appendChild(bookEntry)
+      let bookKey = document.createElement("li")
+      bookKey.textContent = key
+      bookKey.classList.add("bookSection")
+      bookList.appendChild(bookKey)
+
+      let bookValue = document.createElement("li")
+      bookValue.textContent = value
+      bookKey.classList.add("bookSectionValue")
+      bookList.appendChild(bookValue)
     }
 
     booksContainer.appendChild(bookList)

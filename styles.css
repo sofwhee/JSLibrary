@@ -49,27 +49,45 @@ table {
 
 /* --------- */
 
+.sourGummy {
+  font-family: "Sour Gummy", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
 body {
   background-color: #3c86c7;
 }
 
 #booksContainer {
-  display: flex;
-  justify-content: center;
-  background-color: #ffffff2b;
-  gap: 2vw;
-  padding: 12px;
   border-radius: 10px;
   margin: 12px;
+  padding: 12px;
+  gap: 2vw;
+
+  display: flex;
+  justify-content: center;
+
+  background-color: #ffffff2b;
 }
 
 #booksContainer > ol {
+  width: 16vw;
+  aspect-ratio: 1 / 1;
+  border-radius: 10px;
+
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   text-align: center;
-  width: 16vw;
-  aspect-ratio: 1 / 1;
+
   background-color: #e1f1f3;
-  border-radius: 10px;
+  color: green;
+}
+
+#booksContainer > ol > li {
+  font-size: larger;
 }
