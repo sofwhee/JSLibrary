@@ -62,9 +62,23 @@ body {
   background-color: #3c86c7;
 }
 
+#title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 90px;
+  color: #ffdfdf;
+  margin-top: 56px;
+}
+
 #booksContainer {
   border-radius: 10px;
-  margin: 12px;
+  margin: 12px 24px;
   padding: 12px;
   gap: 2vw;
 
@@ -74,8 +88,8 @@ body {
   background-color: #ffffff2b;
 }
 
-#booksContainer > ol {
-  width: 16vw;
+.book {
+  width: 22vw;
   aspect-ratio: 1 / 1;
   border-radius: 10px;
 
@@ -88,6 +102,11 @@ body {
   color: green;
 }
 
-#booksContainer > ol > li {
+.bookKey {
+  font-size: 17px;
+  color: #89af80;
+}
+
+.bookValue {
   font-size: larger;
 }

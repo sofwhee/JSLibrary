@@ -17,17 +17,23 @@ function addBookToLibrary(title, author, pages, read) {
 function displayAllBooks() {
   myLibrary.forEach((book) => {
     let bookList = document.createElement("ol")
+    bookList.classList.add("book")
 
     for (const [key, value] of Object.entries(book)) {
+      let bookKeyValuePair = document.createElement("ol")
+      bookKeyValuePair.classList.add("bookSection")
+
       let bookKey = document.createElement("li")
       bookKey.textContent = key
-      bookKey.classList.add("bookSection")
-      bookList.appendChild(bookKey)
+      bookKey.classList.add("bookKey")
+      bookKeyValuePair.appendChild(bookKey)
 
       let bookValue = document.createElement("li")
       bookValue.textContent = value
-      bookKey.classList.add("bookSectionValue")
-      bookList.appendChild(bookValue)
+      bookValue.classList.add("bookValue")
+      bookKeyValuePair.appendChild(bookValue)
+
+      bookList.appendChild(bookKeyValuePair)
     }
 
     booksContainer.appendChild(bookList)
