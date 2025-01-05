@@ -44,6 +44,7 @@ function displayAllBooks() {
 addBookToLibrary("Howdy", "Duke Wellington", 15, false)
 addBookToLibrary("Howdy2", "Duke Wellington", 12, false)
 addBookToLibrary("Boopo", "Marge Bimple", 20, true)
+addBookToLibrary("The Legend of Looking At This Website", "You", 999, true)
 
 displayAllBooks()
 
