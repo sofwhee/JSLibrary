@@ -20,7 +20,10 @@
   <ul id="booksContainer" class="sourGummy"></ul>
 
   <dialog id="dialogAddBook">
+    <button id="dialogCloser">Close</button>
+
     <p>Fill in your book details!</p>
+
     <form action="/form-handler" method="post">
       <p>
         <label for="title">Title</label>
@@ -38,11 +41,9 @@
         <input type="radio" id="read" name="read">
 
       <p class="button">
-        <button>Add</button>
+        <button id="dialogSubmit">Add</button>
       </p>
     </form>
-    <button id="dialogSubmit">Submit</button>
-    <button id="dialogCloser">Close</button>
   </dialog>
 
   <button id="dialogOpener">Add a book...</button>

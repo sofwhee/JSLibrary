@@ -61,6 +61,10 @@ dialogCloser.addEventListener("click", () => {
   dialogAddBook.close()
 })
 
+dialogSubmit.addEventListener("click", function(event){
+  event.preventDefault()
+})
+
 // step 4
 // there will be a button to bring up a form to add books
 // users will input new book details
