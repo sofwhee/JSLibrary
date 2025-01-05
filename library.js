@@ -1,3 +1,5 @@
+const booksContainer = document.querySelector("#booksContainer");
+
 const myLibrary = [];
 
 function Book(title, author, pages, read) {
@@ -14,13 +16,25 @@ function addBookToLibrary(title, author, pages, read) {
 
 function displayAllBooks() {
   myLibrary.forEach((book) => {
-    
+    let bookList = document.createElement("ol")
+
+    for (const [key, value] of Object.entries(book)) {
+      let bookEntry = document.createElement("li")
+      bookEntry.textContent = value
+      console.log(bookEntry.textContent)
+      bookList.appendChild(bookEntry)
+    }
+
+    booksContainer.appendChild(bookList)
+
   });
 }
 
 addBookToLibrary("Howdy", "Duke Wellington", 15, false)
+addBookToLibrary("Howdy2", "Duke Wellington", 12, false)
+addBookToLibrary("Boopo", "Marge Bimple", 20, true)
 
-console.log(myLibrary)
+displayAllBooks()
 
 
 // step 3
