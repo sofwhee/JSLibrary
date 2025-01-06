@@ -75,6 +75,7 @@ dialogSubmit.addEventListener("click", function(event){
 
   addBookToLibrary(title, author, pages, read)
 })
+
 // step 8 style form
 
 // step 9
