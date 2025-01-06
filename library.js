@@ -9,44 +9,46 @@ function Book(title, author, pages, read) {
   this.read = read
 }
 
-function addBookToLibrary(title, author, pages, read) {
-  let newbook = new Book(title, author, pages, read)
-  myLibrary.push(newbook)
+function addBookToDisplay(book) {
+  let bookList = document.createElement("ol")
+  bookList.classList.add("book")
+
+  for (const [key, value] of Object.entries(book)) {
+    let bookKeyValuePair = document.createElement("ol")
+    bookKeyValuePair.classList.add("bookSection")
+
+    let bookKey = document.createElement("li")
+    bookKey.textContent = key
+    bookKey.classList.add("bookKey")
+    bookKeyValuePair.appendChild(bookKey)
+
+    let bookValue = document.createElement("li")
+    bookValue.textContent = value
+    bookValue.classList.add("bookValue")
+    bookKeyValuePair.appendChild(bookValue)
+
+    bookList.appendChild(bookKeyValuePair)
+  }
+
+  booksContainer.appendChild(bookList)
 }
 
-function displayAllBooks() {
-  myLibrary.forEach((book) => {
-    let bookList = document.createElement("ol")
-    bookList.classList.add("book")
-
-    for (const [key, value] of Object.entries(book)) {
-      let bookKeyValuePair = document.createElement("ol")
-      bookKeyValuePair.classList.add("bookSection")
-
-      let bookKey = document.createElement("li")
-      bookKey.textContent = key
-      bookKey.classList.add("bookKey")
-      bookKeyValuePair.appendChild(bookKey)
-
-      let bookValue = document.createElement("li")
-      bookValue.textContent = value
-      bookValue.classList.add("bookValue")
-      bookKeyValuePair.appendChild(bookValue)
-
-      bookList.appendChild(bookKeyValuePair)
-    }
-
-    booksContainer.appendChild(bookList)
-
-  });
+function addBookToLibrary(title, author, pages, read) {
+  if (read == true) { 
+    read = "yes" 
+  } else {
+    read = "no"
+  }
+  
+  let newbook = new Book(title, author, pages, read)
+  myLibrary.push(newbook)
+  addBookToDisplay(newbook)
 }
 
 addBookToLibrary("Howdy", "Duke Wellington", 15, false)
 addBookToLibrary("Howdy2", "Duke Wellington", 12, false)
 addBookToLibrary("Boopo", "Marge Bimple", 20, true)
 addBookToLibrary("The Legend of Looking At This Website", "You", 999, true)
-
-displayAllBooks()
 
 const dialogAddBook = document.querySelector("#dialogAddBook")
 const dialogOpener = document.querySelector("#dialogOpener")
@@ -63,21 +65,16 @@ dialogCloser.addEventListener("click", () => {
 
 dialogSubmit.addEventListener("click", function(event){
   event.preventDefault()
+
+  const bookForm = document.querySelector("form")
+
+  const title = bookForm.elements.namedItem("title").value
+  const author = bookForm.elements.namedItem("author").value
+  const pages = bookForm.elements.namedItem("pages").value
+  const read = bookForm.elements.namedItem("read").value
+
+  addBookToLibrary(title, author, pages, read)
 })
-
-// step 4
-// there will be a button to bring up a form to add books
-// users will input new book details
-// author, title, pages, read, etc
-// consider the visual representation of this form
-// sidebar? dialog? modal?
-// investigate and learn
-// then decide
-
-// modal
-
-// step 4
-// make the form
 
 // step 5
 // add a "new book" button
