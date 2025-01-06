@@ -59,7 +59,8 @@ table {
 }
 
 body {
-  background-color: #3c86c7;
+  background: rgb(3,133,163);
+  background: linear-gradient(90deg, rgba(3,133,163,1) 0%, rgba(60,134,199,1) 50%, rgba(3,133,163,1) 100%);
 }
 
 #title {
@@ -137,6 +138,11 @@ h1 {
 #dialogOpener:hover {
   color: white;
   background-color: rgb(192 110 182);
+}
+
+#dialogOpener:active {
+  color: rgb(99, 94, 94);
+  background-color: rgb(73, 38, 69);
 }
 
 ::backdrop {
