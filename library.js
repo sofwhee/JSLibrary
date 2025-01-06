@@ -39,7 +39,7 @@ function addBookToLibrary(title, author, pages, read) {
   } else {
     read = "no"
   }
-  
+
   let newbook = new Book(title, author, pages, read)
   myLibrary.push(newbook)
   addBookToDisplay(newbook)
@@ -75,20 +75,7 @@ dialogSubmit.addEventListener("click", function(event){
 
   addBookToLibrary(title, author, pages, read)
 })
-
-// step 5
-// add a "new book" button
-
-// step 6
-// have it bring up the form when clicked
-
-// step 7
-// submit input wont work. no server
-// use event.preventDefault();
-// refer to docs to figure that out
-
-// step 8
-// make submit button add to library
+// step 8 style form
 
 // step 9
 // add button on each book's display to remove it
