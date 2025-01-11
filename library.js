@@ -27,6 +27,11 @@ function addBookToDisplay(book, bookIndex) {
   bookRemove.classList.add("bookRemover", "sourGummy")
   bookList.appendChild(bookRemove)  
 
+  let bookRead = document.createElement("button")
+  bookRead.textContent = "O"
+  bookRead.classList.add("bookReader", "sourGummy")
+  bookList.appendChild(bookRead)  
+
   for (const [key, value] of Object.entries(book)) {
     let bookKeyValuePair = document.createElement("ol")
     bookKeyValuePair.classList.add("bookSection")
