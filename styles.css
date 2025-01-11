@@ -122,20 +122,37 @@ h1 {
 }
 
 .bookReader {
-  transform: translate(162px, -100px);
+  transform: translate(190px, 100px);
 
-  color: rgb(43, 119, 233);
-  background-color: #b9e3ff;
+  color: #dfeedf;
+  background-color: #b7e0b7;
 }
 
 .bookReader:hover {
-  color: white;
-  background-color: #47b5ff;
+  color: #dfeedf;
+  background-color: #326e32;
 }
 
 .bookReader:active {
-  color: rgb(155, 155, 155);
-  background-color: #42779b;
+  color: #c1dbc1;
+  background-color: #1b441b;
+}
+
+.bookUnreader {
+  transform: translate(190px, 100px);
+
+  color: rgb(255, 255, 255);
+  background-color: #5eb55e;
+}
+
+.bookUnreader:hover {
+  color: #dfeedf;
+  background-color: #326e32;
+}
+
+.bookUnreader:active {
+  color: #c1dbc1;
+  background-color: #1b441b;
 }
 
 .bookRemover {

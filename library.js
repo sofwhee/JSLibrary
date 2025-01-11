@@ -28,7 +28,7 @@ function addBookToDisplay(book, bookIndex) {
   bookList.appendChild(bookRemove)  
 
   let bookRead = document.createElement("button")
-  bookRead.textContent = "O"
+  bookRead.textContent = "✔"
   bookRead.classList.add("bookReader", "sourGummy")
   bookList.appendChild(bookRead)  
 
@@ -108,6 +108,8 @@ bookReaders.forEach((reader) => {
     const bookReadKey = bookElement.getElementsByClassName("read")[0]
     const bookReadValue = bookReadKey.nextElementSibling
     bookReadValue.innerText = bookObject.read
+
+    reader.classList.toggle("bookUnreader")
   })
 })
 
@@ -123,17 +125,4 @@ bookRemovers.forEach((remover) => {
   })
 })
 
-// step 8 style form
-
-// step 9
-// add button on each book's display to remove it
-
-// associate DOM elements with book objects somehow
-// like giving them a data-attribute
-// which corresponds to library array index
-
-// step 10
-// create a Book prototype method to toggle read status
-
-// step 11
-// add a button to toggle read status
+// add checked functionality
