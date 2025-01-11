@@ -38,12 +38,11 @@ function addBookToDisplay(book, bookIndex) {
 
     let bookKey = document.createElement("li")
     bookKey.textContent = key
-    bookKey.classList.add("bookKey")
+    bookKey.classList.add("bookKey", `${key}`)
     bookKeyValuePair.appendChild(bookKey)
 
     let bookValue = document.createElement("li")
     bookValue.textContent = value
-    bookValue.classList.add("bookValue")
     bookKeyValuePair.appendChild(bookValue)
 
     bookList.appendChild(bookKeyValuePair)
@@ -104,7 +103,11 @@ bookReaders.forEach((reader) => {
     const bookElement = reader.parentNode
     const bookIndex = bookElement.getAttribute("data-booknumber")
     const bookObject = myLibrary[bookIndex]
-    bookObject.toggleRead
+    bookObject.toggleRead()
+
+    const bookReadKey = bookElement.getElementsByClassName("read")[0]
+    const bookReadValue = bookReadKey.nextElementSibling
+    bookReadValue.innerText = bookObject.read
   })
 })
 
