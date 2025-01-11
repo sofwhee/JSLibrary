@@ -111,6 +111,12 @@ bookReaders.forEach((reader) => {
 
     reader.classList.toggle("bookUnreader")
   })
+
+  const bookElement = reader.parentNode
+  const bookIndex = bookElement.getAttribute("data-booknumber")
+  const bookObject = myLibrary[bookIndex]
+  
+  if (bookObject.read == "yes") {reader.classList.toggle("bookUnreader")}
 })
 
 let bookRemovers = document.querySelectorAll(".bookRemover")
