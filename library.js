@@ -9,6 +9,14 @@ function Book(title, author, pages, read) {
   this.read = read
 }
 
+Book.prototype.toggleRead = function() {
+  if (this.read == "yes") {
+    this.read = "no"
+  } else {
+    this.read = "yes"
+  }
+}
+
 function addBookToDisplay(book, bookIndex) {
   let bookList = document.createElement("ol")
   bookList.classList.add("book")
