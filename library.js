@@ -13,6 +13,11 @@ function addBookToDisplay(book) {
   let bookList = document.createElement("ol")
   bookList.classList.add("book")
 
+  let bookRemove = document.createElement("button")
+  bookRemove.textContent = "X"
+  bookRemove.classList.add("bookRemover", "sourGummy")
+  bookList.appendChild(bookRemove)
+
   for (const [key, value] of Object.entries(book)) {
     let bookKeyValuePair = document.createElement("ol")
     bookKeyValuePair.classList.add("bookSection")
@@ -68,12 +73,13 @@ dialogSubmit.addEventListener("click", function(event){
 
   const bookForm = document.querySelector("form")
 
-  const title = bookForm.elements.namedItem("title").value
+  const title = bookForm.elements.namedItem("bookTitle").value
   const author = bookForm.elements.namedItem("author").value
   const pages = bookForm.elements.namedItem("pages").value
   const read = bookForm.elements.namedItem("read").value
 
   addBookToLibrary(title, author, pages, read)
+  dialogAddBook.close()
 })
 
 // step 8 style form

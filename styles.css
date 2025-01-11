@@ -79,14 +79,18 @@ h1 {
   margin-top: 56px;
 }
 
-#booksContainer {
+#booksContainer, #dialogOpenerBG {
   border-radius: 10px;
   margin: 12px 24px;
   padding: 12px;
-  gap: 2vw;
+  background-color: #ffffff2b;
+}
 
+#booksContainer {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
+  gap: 2vw;
 
   background-color: #ffffff2b;
 }
@@ -100,10 +104,35 @@ h1 {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  flex-basis: 210px;
   text-align: center;
 
-  background-color: #e1f1f3;
-  color: green;
+  background-color: #edf3f3;
+  color: #248f24;
+}
+
+.bookRemover {
+  height: 20px;
+  width: 25px;
+  border-radius: 6px;
+  border: 0;
+
+  position: absolute;
+  transform: translate(190px, -100px);
+
+  color: red;
+  background-color: #ffb9b9;
+  transition: background-color, color .17s ease,color .17s ease;
+}
+
+.bookRemover:hover {
+  color: white;
+  background-color: rgb(255, 48, 48);
+}
+
+.bookRemover:active {
+  color: rgb(155, 155, 155);
+  background-color: rgb(121, 0, 0);
 }
 
 .bookKey {
@@ -120,34 +149,53 @@ h1 {
   justify-content: center;
 }
 
+#dialogAddBook {
+  border: none;
+  box-shadow: 0px 0px 8px 3px #919191;
+  text-align: center;
+  width: 300px;
+}
+
+#addBookInstructions {
+  font-size: larger;
+}
+
 #dialogOpener {
-  flex-basis: 150px;
+  width: 150px;
   height: 48px;
+}
+
+#dialogCloser, #dialogSubmit {
+  width: 100px;
+  height: 38px;
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+#dialogOpener, #dialogCloser, #dialogSubmit {
   border: none;
   border-radius: 4px;
 
   font-size: larger;
 
-  color: #dededeab;
-
-  background: rgb(120 75 147 / 54%);
+  color: #ffefef;
+  background-color: rgb(227 158 219);
 
   transition: background-color, color .17s ease,color .17s ease;
 }
 
-#dialogOpener:hover {
+#dialogOpener:hover, #dialogCloser:hover, #dialogSubmit:hover {
   color: white;
-  background-color: rgb(192 110 182);
+  background-color: rgb(243, 169, 234)
 }
 
-#dialogOpener:active {
+#dialogOpener:active, #dialogCloser:active, #dialogSubmit:active {
   color: rgb(99, 94, 94);
-  background-color: rgb(73, 38, 69);
+  background-color: rgb(121, 70, 115);
 }
 
-#dialogAddBook {
-  border: none;
-  box-shadow: 0px 0px 8px 3px #919191;
+#dialogCloser {
+  margin-bottom: 12px;
 }
 
 ::backdrop {
@@ -159,4 +207,25 @@ h1 {
     green
   );
   opacity: 0.75;
+}
+
+#addBookInstructions {
+  color: #197419;
+}
+
+form > * {
+  margin-top: 12px;
+  color: #248f24;
+}
+
+form p {
+  display: flex;
+  flex-direction:column;
+  gap: 3px;
+}
+
+form p.button {
+  flex-direction: row;
+  justify-content: space-around;
+  gap: 15px;
 }

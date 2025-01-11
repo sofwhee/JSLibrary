@@ -19,15 +19,14 @@
 
   <ul id="booksContainer" class="sourGummy"></ul>
 
-  <dialog id="dialogAddBook">
-    <button id="dialogCloser">Close</button>
+  <dialog id="dialogAddBook" class="sourGummy">
 
-    <p>Fill in your book details!</p>
+    <p id="addBookInstructions">Fill in your book details!</p>
 
     <form>
       <p>
-        <label for="title">Title</label>
-        <input type="text" id="title" name="title">
+        <label for="bookTitle">Book Title</label>
+        <input type="text" id="bookTitle" name="bookTitle">
       </p>
       <p>
         <label for="author">Author</label>
@@ -37,16 +36,22 @@
         <label for="pages">Pages</label>
         <input type="number" id="pages" name="pages">
       </p>
+      <p>
         <label for="read">Read</label>
         <input type="radio" id="read" name="read">
-
+      </p>
       <p class="button">
-        <button id="dialogSubmit">Add</button>
+        <button id="dialogCloser" class="sourGummy">Cancel</button>
+        <button id="dialogSubmit" class="sourGummy">Add</button>
       </p>
     </form>
   </dialog>
 
-  <div id="dialogOpenerContainer"><button id="dialogOpener" class="sourGummy">Add a book</button></div>
+  <div id="dialogOpenerContainer">
+    <div id="dialogOpenerBG">
+      <button id="dialogOpener" class="sourGummy">Add a book</button>
+    </div>
+  </div>
 
   <!-- // step 4
 // there will be a button to bring up a form to add books
