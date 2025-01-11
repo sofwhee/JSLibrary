@@ -126,7 +126,7 @@ bookRemovers.forEach((remover) => {
   remover.addEventListener("click", function(event) {
     const bookElement = remover.parentNode
     const bookIndex = bookElement.getAttribute("data-booknumber")
-    myLibrary.splice(bookIndex, 1)
+    myLibrary[bookIndex] = null
     bookElement.remove()
   })
 })
