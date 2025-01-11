@@ -96,13 +96,25 @@ dialogSubmit.addEventListener("click", function(event){
   dialogAddBook.close()
 })
 
+let bookReaders = document.querySelectorAll(".bookReader")
+bookReaders = Array.from(bookReaders)
+
+bookReaders.forEach((reader) => {
+  reader.addEventListener("click", function(event) {
+    const bookElement = reader.parentNode
+    const bookIndex = bookElement.getAttribute("data-booknumber")
+    const bookObject = myLibrary[bookIndex]
+    bookObject.toggleRead
+  })
+})
+
 let bookRemovers = document.querySelectorAll(".bookRemover")
 bookRemovers = Array.from(bookRemovers)
 
 bookRemovers.forEach((remover) => {
   remover.addEventListener("click", function(event) {
-    bookElement = remover.parentNode
-    bookIndex = bookElement.getAttribute("data-booknumber")
+    const bookElement = remover.parentNode
+    const bookIndex = bookElement.getAttribute("data-booknumber")
     myLibrary.splice(bookIndex, 1)
     bookElement.remove()
   })
