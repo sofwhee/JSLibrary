@@ -9,14 +9,15 @@ function Book(title, author, pages, read) {
   this.read = read
 }
 
-function addBookToDisplay(book) {
+function addBookToDisplay(book, bookIndex) {
   let bookList = document.createElement("ol")
   bookList.classList.add("book")
+  bookList.setAttribute('data-bookNumber', bookIndex)
 
   let bookRemove = document.createElement("button")
   bookRemove.textContent = "X"
   bookRemove.classList.add("bookRemover", "sourGummy")
-  bookList.appendChild(bookRemove)
+  bookList.appendChild(bookRemove)  
 
   for (const [key, value] of Object.entries(book)) {
     let bookKeyValuePair = document.createElement("ol")
@@ -47,7 +48,7 @@ function addBookToLibrary(title, author, pages, read) {
 
   let newbook = new Book(title, author, pages, read)
   myLibrary.push(newbook)
-  addBookToDisplay(newbook)
+  addBookToDisplay(newbook, myLibrary.indexOf(newbook))
 }
 
 addBookToLibrary("Howdy", "Duke Wellington", 15, false)
@@ -80,6 +81,18 @@ dialogSubmit.addEventListener("click", function(event){
 
   addBookToLibrary(title, author, pages, read)
   dialogAddBook.close()
+})
+
+let bookRemovers = document.querySelectorAll(".bookRemover")
+bookRemovers = Array.from(bookRemovers)
+
+bookRemovers.forEach((remover) => {
+  remover.addEventListener("click", function(event) {
+    bookElement = remover.parentNode
+    bookIndex = bookElement.getAttribute("data-booknumber")
+    myLibrary.splice(bookIndex, 1)
+    bookElement.remove()
+  })
 })
 
 // step 8 style form
